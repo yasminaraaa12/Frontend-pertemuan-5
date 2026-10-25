@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Produk - Admin</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="index2.html" class="nav-link">Lihat Katalis Card Produk &rarr;</a>
+    <h2>Form Tambah Produk</h2>
+    
+    <form id="productForm">
+        <div class="form-group">
+            <label for="namaProduk">Nama Produk</label>
+            <input type="text" id="namaProduk" placeholder="Contoh: iPhone 14" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kategori">Kategori</label>
+            <select id="kategori" required>
+                <option value="">-- Pilih Kategori --</option>
+                <option value="iPhone">iPhone</option>
+                <option value="Mac">Mac</option>
+                <option value="iPad">iPad</option>
+                <option value="Apple Watch">Apple Watch</option>
+                <option value="AirPods & Audio">AirPods & Audio</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="harga">Harga (Rp)</label>
+            <input type="number" id="harga" min="0" placeholder="Contoh: 150000" required>
+        </div>
+
+        <div class="form-group">
+            <label for="stok">Stok Barang</label>
+            <input type="number" id="stok" min="0" placeholder="Contoh: 25" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Simpan Produk</button>
+    </form>
+
+    <div class="table-section">
+        <h2>Daftar Produk Ditambahkan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Produk</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                <!-- Data akan dimasukkan lewat JavaScript -->
+            </tbody>
+        </table>
+        <div id="emptyMessage" class="empty-text">Belum ada produk yang ditambahkan.</div>
+    </div>
+</div>
+
+<!-- Modal Pop-up Edit Produk -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeEditModal()">&times;</span>
+        <h2>Edit Produk</h2>
+        
+        <form id="editProductForm">
+            <input type="hidden" id="editIndex">
+            
+            <div class="form-group">
+                <label for="editNamaProduk">Nama Produk</label>
+                <input type="text" id="editNamaProduk" required>
+            </div>
+
+            <div class="form-group">
+                <label for="editKategori">Kategori</label>
+                <select id="editKategori" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="iPhone">iPhone</option>
+                    <option value="Mac">Mac</option>
+                    <option value="iPad">iPad</option>
+                    <option value="Apple Watch">Apple Watch</option>
+                    <option value="AirPods & Audio">AirPods & Audio</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="editHarga">Harga (Rp)</label>
+                <input type="number" id="editHarga" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="editStok">Stok Barang</label>
+                <input type="number" id="editStok" min="0" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Simpan Perubahan</button>
+        </form>
+    </div>
+</div>
+
+<!-- Menghubungkan file JavaScript eksternal -->
+<script src="assets/js/dom_renderer.js"></script>
+
+</body>
+</html>
